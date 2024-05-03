@@ -1,0 +1,17 @@
+# Thư mục và tệp tạm thời và build
+__pycache__/
+*.pyc
+dist/
+build/
+*.egg-info/
+
+# Môi trường ảo
+venv/
+virtualenv/
+
+# Các tệp cấu hình hệ thống cụ thể cho môi trường phát triển cục bộ
+.DS_Store
+
+# Thư mục và tệp log và output của IDE
+.vscode/
+.idea/

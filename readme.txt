@@ -1,0 +1,4 @@
+- Di chuyển thư mục dự án vào môi trường ảo: python -m venv venv
+- Kích hoạt môi trường ảo: venv\Scripts\activate
+- Thoát môi trường ảo: deactivate
+- Cài đặt thư viện cho dự án: pip install -r requirements.txt
