@@ -3,6 +3,7 @@ from src.ground.ground import Ground
 from src.player.player import Player
 from src.events.manipulate_blocks import ManipulateBlocks
 from src.menu.game_menu import GameMenu
+from src.player.material_picker import MaterialPicker
 
 # Khởi tạo ứng dụng Usina
 app = Ursina()
@@ -18,10 +19,10 @@ window.borderless = True              # Cửa sổ có viền
 window.fullscreen = False              # Không hiển thị toàn màn hình
 window.exit_button.visible = True      # Hiển thị nút thoát
 window.fps_counter.enabled = True      # Hiển thị bộ đếm FPS
-window.size = (800,600)
 mouse.visible = False
 
 ground.drawGround()
+material_picker = MaterialPicker()
 
 def input(key):
     if key == 'escape':
@@ -35,4 +36,5 @@ def input(key):
     else:
         manipulate_block.interact(key)
 
-app.run()
+if __name__ == "__main__":
+    app.run()

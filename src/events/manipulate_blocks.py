@@ -35,6 +35,5 @@ class ManipulateBlocks:
         '''
         if key == 'right mouse down' and mouse.hovered_entity and self.player:
             distance_to_entity = distance(self.player.position, mouse.hovered_entity.position)
-            print(distance_to_entity)
-            if distance_to_entity <= (self.distance_manipulate - 2) and not mouse.hovered_entity.block_type == 'bedrock':
+            if distance_to_entity <= (self.distance_manipulate - 1) and not mouse.hovered_entity.block_type == 'bedrock':
                 destroy(mouse.hovered_entity)
