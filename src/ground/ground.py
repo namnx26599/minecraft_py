@@ -63,7 +63,7 @@ class Ground:
     #                 block_type = 'stone'
     #             block_position = Vec3(x, y + self.min_height, z)
     #             # Kiểm tra xem block có nằm trong frustum không
-    #             in_frustum = all(plane.is_in_front(block_position) for plane in frustum_planes.values())
+    #             in_frustum = all(plane.is_in_front(block_position) for plane in frustum_planes)
     #             if in_frustum:
     #                 # Thêm block vào danh sách để vẽ
     #                 block_list.append(Block(block_type=block_type, add_to_scene_entities=False).draw_block(position=block_position))
