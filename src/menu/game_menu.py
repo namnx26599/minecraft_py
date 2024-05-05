@@ -25,8 +25,8 @@ class GameMenu(Entity):
             model='quad',
             scale=(0.75, 0.2),
             position=(0, 0.11),
-            color=color.rgba(0, 100, 0, 1),
-            hover_color=color.rgba(0, 50, 0, 1),
+            color=color.rgba(4/255, 198/255, 14/255, 1),
+            hover_color=color.rgba(0, 170/255, 9/255, 1),
             text='Continue',
             on_click=self.continue_game
         )
@@ -35,6 +35,5 @@ class GameMenu(Entity):
         application.quit()
 
     def continue_game(self):
-        mouse.locked = True
         self.enabled = False
         invoke(setattr, application, 'paused', False)
