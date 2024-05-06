@@ -19,7 +19,7 @@ game_menu = GameMenu()
 Sky()
 window.title = 'Minecraft' # Đặt tiêu đề cho cửa sổ
 window.borderless = True              # Cửa sổ có viền
-window.fullscreen = True              # Không hiển thị toàn màn hình
+window.fullscreen = False              # Không hiển thị toàn màn hình
 window.exit_button.visible = True      # Hiển thị nút thoát
 window.fps_counter.enabled = True      # Hiển thị bộ đếm FPS
 mouse.locked = True
@@ -27,15 +27,22 @@ window.fps_counter.enabled = True
 
 def input(key):
     if key == 'escape':
+        manipulate_block.enabled = False
         player.enabled = not player.enabled
         game_menu.enabled = not game_menu.enabled
         if game_menu.enabled:
             invoke(setattr, application, 'paused', True)
     if key == 'b':
+        manipulate_block.enabled = False
         material_picker.enabled = not material_picker.enabled
         player.enabled = not player.enabled
         inventory.enabled = not inventory.enabled
+    if key == 'f':
+        player.gravity = 1 if player.gravity == 0 else 0
+    if key == 'space' and player.gravity == 0:
+        player.y +=2
     else:
+        print(player.position)
         manipulate_block.interact(key)
 
 def update():
